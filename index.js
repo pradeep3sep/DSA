@@ -236,3 +236,98 @@
 
 // ------------------------------------------------------------------------------------------------------------ //
 // Recursion ==  A process (a function in our case) that calls itself
+// base code in recursion : A situation when the recursion ends. basically jha hum recursion stop kar de ie return of function
+// Used location are:
+// JSON.parse / JSON.stringfy
+// document.getElementById and DOM traversal alogorithms
+// sometimes cleaner alternative of iterations
+// basic example is
+//* Recursive Version
+// function countDown(num){
+//     if(num <= 0) {
+//         console.log("All done!");
+//         return;
+//     }
+//     console.log(num);
+//     num--;
+//     countDown(num);
+// }
+// countDown(3)
+
+//* Iterative Version
+// function countDown(num){
+//     for(var i = num; i > 0; i--){
+//         console.log(i);
+//     }
+//     console.log("All done!")
+// }
+
+//* little bit advance version
+// function sumRange(num) {
+//   if (num === 1) return 1; // Here is the return which ends recursion not the below return which end recursion
+//   return num + sumRange(num - 1);
+// }
+//  sumRange(4)
+
+//* factorial with normal loop
+// function factorial(num) {
+//   let total = 1;
+//   for (let i = num; i > 1; i--) {
+//     total *= i;
+//   }
+//   return total;
+// }
+// console.log(factorial(5));
+
+//* factorial with recursion
+// function factorial(num){
+//     if(num === 1) return 1;
+//     return num * factorial(num-1);
+// }
+// console.log(factorial(5))
+
+//* Helper method recursion: It is ouside function having the recusrion function inside it. In this a variable is placed outside the recursive function so that variable we can update inside the recurive function and variable do not get restted. Helper method is long but easy to understand while the pure recursion are short but sometimes becomes complicated to undersatnd.
+
+//* Helper method
+// function collectOddValues(arr) {
+//   let result = [];
+
+//   function helper(helperInput) {
+//     if (helperInput.length === 0) {
+//       return;
+//     }
+
+//     if (helperInput[0] % 2 !== 0) {
+//       result.push(helperInput[0]);
+//     }
+
+//     helper(helperInput.slice(1));
+//   }
+
+//   helper(arr);
+
+//   return result;
+// }
+// collectOddValues([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+
+//* pure recursion
+// function collectOddValues(arr) {
+//   let newArr = [];
+
+//   if (arr.length === 0) {
+//     return newArr;
+//   }
+
+//   if (arr[0] % 2 !== 0) {
+//     newArr.push(arr[0]);
+//   }
+
+//   newArr = newArr.concat(collectOddValues(arr.slice(1)));
+//   return newArr;
+// }
+
+// collectOddValues([1, 2, 3, 4, 5]);
+//* Pure Recursion Tips
+// For arrays, use methods like slice, the spread operator, and concat that make copies of arrays so you do not mutate them
+// Remember that strings are immutable so you will need to use methods like slice, substr, or substring to make copies of strings
+// To make copies of objects use Object.assign, or the spread operator
