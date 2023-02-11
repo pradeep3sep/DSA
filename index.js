@@ -234,7 +234,6 @@
 // }
 // console.log(search([1, 2, 3, 4, 5, 6], 4));
 
-
 //* Quiz questions
 // Write a function called averagePair. Given a sorted array of integers and a target average, determine if there is a pair of values in the array where the average of the pair equals the target average. There may be more than one pair that matches the average target.
 
@@ -273,12 +272,12 @@
 // }
 // console.log(averagePair([1, 3, 3, 5, 6, 7, 10, 12, 19], 8));
 
-//* another solution 
+//* another solution
 // function averagePair(arr, num){
 //   let start = 0
 //   let end = arr.length-1;
 //   while(start < end){
-//     let avg = (arr[start]+arr[end]) / 2 
+//     let avg = (arr[start]+arr[end]) / 2
 //     if(avg === num) return true;
 //     else if(avg < num) start++
 //     else end--
@@ -644,4 +643,34 @@
 
 // website for visual : https://visualgo.net/en/sorting?slide=1-1   Click Insertion Sort
 
+// --------------------------------------------- Merge Sort --------------------------//
+//Below is the code to merge two sorted arrays
+//* Merges two already sorted arrays
+// function merge(arr1, arr2) {
+//   let results = [];
+//   let i = 0;
+//   let j = 0;
+//   while (i < arr1.length && j < arr2.length) {
+//     if (arr2[j] > arr1[i]) {
+//       results.push(arr1[i]);
+//       i++;
+//     } else {
+//       results.push(arr2[j]);
+//       j++;
+//     }
+//   }
+//   while (i < arr1.length) {
+//     results.push(arr1[i]);
+//     i++;
+//   }
+//   while (j < arr2.length) {
+//     results.push(arr2[j]);
+//     j++;
+//   }
+//   return results;
+// }
+// merge([100, 200], [1, 2, 3, 5, 6]);
 
+//! To generate the random 100000 number below is the code
+// var data = Array.apply(null, {length: 100000}).map(Function.call, Math.random)
+// console.log(data)
