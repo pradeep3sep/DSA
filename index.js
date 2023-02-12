@@ -459,6 +459,116 @@
 // }
 // console.log(areThereDuplicates("a", "b", "c", "a"));
 
+//* udemy quiz
+// Write a function called productOfArray which takes in an array of numbers and returns the product of them all.
+// function productOfArray(arr) {
+//   if (arr.length === 0) return 1;
+//   return arr[0] * productOfArray(arr.slice(1));
+// }
+
+//* udemy quiz
+// Write a recursive function called fib which accepts a number and returns the nth number in the Fibonacci sequence. Recall that the Fibonacci sequence is the sequence of whole numbers 1, 1, 2, 3, 5, 8, ... which starts with 1 and 1, and where every number thereafter is equal to the sum of the previous two numbers.
+
+// self solution
+// function fib(num){
+//     let arr = [1,1]
+
+//     function helper(num){
+//         if(num < arr.length && num < 1) return
+//         arr.push(arr[arr.length -1] + arr[arr.length -2])
+//         helper(num-1)
+//     }
+//     helper(num)
+// console.log(arr)
+//     return arr[num -1]
+// }
+// console.log(fib(35))
+
+//&udemy wale ka solution
+// function fib(n){
+//     if (n <= 2) return 1;
+//     return fib(n-1) + fib(n-2);
+// }
+
+//* Udemy quiz
+// Write a recursive function called reverse which accepts a string and returns a new string in reverse.
+// function reverse(str){
+//     if(!str.length) return ''
+//     return str[str.length -1] + reverse(str.slice(0,-1))
+// }
+// console.log(reverse('test'))
+
+//* udemy quiz isPalindrome
+
+// Self solution
+// function isPalindrome(text){
+//     let value = ''
+//     function reverse(str){
+//         if(!str.length) return ''
+//         return str[str.length -1] + reverse(str.slice(0,-1))
+//     }
+//     value = reverse(text)
+//     if (value === text) {
+//         return true
+//     }
+//     return false
+// }
+// console.log(isPalindrome('awesome'))
+
+// Instructor Solution
+// function isPalindrome(str){
+//     if(str.length === 1) return true;
+//     if(str.length === 2) return str[0] === str[1];
+//     if(str[0] === str.slice(-1)) return isPalindrome(str.slice(1,-1))
+//     return false;
+// }
+
+//* udemy quiz
+
+// Write a recursive function called someRecursive which accepts an array and a callback. The function returns true if a single value in the array returns true when passed to the callback. Otherwise it returns false.
+
+// const isOdd = val => val % 2 !== 0;
+// function someRecursive(list, func){
+//     if(list.length === 0) return false
+//     if(func(list[0])) {
+//         return true
+//     }else {
+//        return someRecursive(list.slice(1),func)
+//     }
+// }
+// console.log(someRecursive([4,6,8], isOdd))
+
+//* udemy quiz
+
+// Write a recursive function called flatten which accepts an array of arrays and returns a new array with all values flattened.
+// function flatten(mainarr) {
+//   let data = [];
+//   function subdeflat(arr) {
+//     for (let unit of arr) {
+//       typeof unit == "number" ? data.push(unit) : subdeflat(unit);
+//     }
+//   }
+//   subdeflat(mainarr);
+//   return data;
+// }
+// console.log(flatten([1, [2, [3, 4], [[5]]]]));
+
+//* Udemy Quiz
+// Write a recursive function called capitalizeFirst. Given an array of strings, capitalize the first letter of each string in the array.
+// function capitalizeFirst(arr) {
+//   if (!arr.length) return '';
+//   return [arr[0][0].toUpperCase() + arr[0].slice(1), ...capitalizeFirst(arr.slice(1))];
+// }
+// console.log(capitalizeFirst(["car", "taco", "banana"]));
+
+//* Udemy Quiz
+// Write a recursive function called capitalizeWords. Given an array of words, return a new array containing each word capitalized.
+// function capitalizedWords(arr) {
+//   if (!arr.length) return [];
+//   return [arr[0].toUpperCase(), ...capitalizedWords(arr.slice(1))];
+// }
+// console.log(capitalizedWords(['i', 'am', 'learning', 'recursion']));
+
 // ------------------------------------------ Searching Alogrithms ------------------------------------- //
 //* Linear Search : We visit one item at a time starting at the beginning moving forward or moving at a set interval one item at a time checking every single thing.
 
@@ -511,7 +621,6 @@
 // Sorting movies based on revenue
 
 //* Bubble sort : A sorting algorithm where the largest values bubble up to the top or end! It is good for the data which is nearly  sorted then O(1) otherwise it is O(n^2).
-// website for visual : https://visualgo.net/en/sorting?slide=1-1
 
 // for swaping the number
 // ES5
@@ -581,8 +690,6 @@
 
 //* Selection sort : Similar to bubble sort, but instead of first placing large values into sorted position, it places small values into sorted position. Is O(n^2) it is good only when you want to minimize the number of swaps that you are making. Like in bubble sort we are swaping in each comparison but here we are swaping when on loop ends
 
-// website for visual : https://visualgo.net/en/sorting?slide=1-1   click selection sort
-
 //& LEGACY VERSION (non ES2015 syntax)
 // function sselectionSort(arr){
 //   for(var i = 0; i < arr.length; i++){
@@ -641,8 +748,6 @@
 
 // insertionSort([2,1,9,76,4])
 
-// website for visual : https://visualgo.net/en/sorting?slide=1-1   Click Insertion Sort
-
 // --------------------------------------------- Merge Sort --------------------------//
 //Below is the code to merge two sorted arrays
 //* Merges two already sorted arrays
@@ -674,3 +779,188 @@
 //! To generate the random 100000 number below is the code
 // var data = Array.apply(null, {length: 100000}).map(Function.call, Math.random)
 // console.log(data)
+
+//! full merge sort
+// Merge function from earlier
+// function merge(arr1, arr2) {
+//   let results = [];
+//   let i = 0;
+//   let j = 0;
+//   while (i < arr1.length && j < arr2.length) {
+//     if (arr2[j] > arr1[i]) {
+//       results.push(arr1[i]);
+//       i++;
+//     } else {
+//       results.push(arr2[j]);
+//       j++;
+//     }
+//   }
+//   while (i < arr1.length) {
+//     results.push(arr1[i]);
+//     i++;
+//   }
+//   while (j < arr2.length) {
+//     results.push(arr2[j]);
+//     j++;
+//   }
+//   return results;
+// }
+
+// Recrusive Merge Sort
+// function mergeSort(arr) {
+//   if (arr.length <= 1) return arr;
+//   let mid = Math.floor(arr.length / 2);
+//   let left = mergeSort(arr.slice(0, mid));
+//   let right = mergeSort(arr.slice(mid));
+//   return merge(left, sright);
+// }
+
+// mergeSort([10, 24, 76, 73]);
+
+// --------------------------------------------- Quick Sort --------------------------//
+
+//& Below is code to find the pivot point which helps further sort
+//* First Version
+// function pivot(arr, start = 0, end = arr.length + 1) {
+//   function swap(array, i, j) {
+//     var temp = array[i];
+//     array[i] = array[j];
+//     array[j] = temp;
+//   }
+
+//   var pivot = arr[start];
+//   var swapIdx = start;
+
+//   for (var i = start + 1; i < arr.length; i++) {
+//     if (pivot > arr[i]) {
+//       swapIdx++;
+//       swap(arr, swapIdx, i);
+//     }
+//   }
+//   swap(arr, start, swapIdx);
+//   return swapIdx;
+// }
+
+//* Version with ES2015 Syntax
+// function pivot(arr, start = 0, end = arr.length - 1) {
+//   const swap = (arr, idx1, idx2) => {
+//     [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+//   };
+
+// We are assuming the pivot is always the first element
+//   let pivot = arr[start];
+//   let swapIdx = start;
+
+//   for (let i = start + 1; i <= end; i++) {
+//     if (pivot > arr[i]) {
+//       swapIdx++;
+//       swap(arr, swapIdx, i);
+//     }
+//   }
+
+// Swap the pivot from the start the swapPoint
+//   swap(arr, start, swapIdx);
+//   return swapIdx;
+// }
+
+// pivot([4, 8, 2, 1, 5, 7, 6, 3]);
+
+//* Quick sort full code in one go
+// function pivot(arr, start = 0, end = arr.length - 1) {
+//   const swap = (arr, idx1, idx2) => {
+//     [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+//   };
+
+//   // We are assuming the pivot is always the first element
+//   let pivot = arr[start];
+//   let swapIdx = start;
+
+//   for (let i = start + 1; i <= end; i++) {
+//     if (pivot > arr[i]) {
+//       swapIdx++;
+//       swap(arr, swapIdx, i);
+//     }
+//   }
+
+//   // Swap the pivot from the start the swapPoint
+//   swap(arr, start, swapIdx);
+//   return swapIdx;
+// }
+
+// function quickSort(arr, left = 0, right = arr.length - 1) {
+//   if (left < right) {
+//     let pivotIndex = pivot(arr, left, right); //3
+//     //left
+//     quickSort(arr, left, pivotIndex - 1);
+//     //right
+//     quickSort(arr, pivotIndex + 1, right);
+//   }
+//   return arr;
+// }
+
+// quickSort([100, -3, 2, 4, 6, 9, 1, 2, 5, 3, 23]);
+
+// --------------------------------------------- Radix Sort --------------------------//
+
+//* Radix sort helpers
+// function getDigit(num, i) {
+//   return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10;
+// }
+
+// function digitCount(num) {
+//   if (num === 0) return 1;
+//   return Math.floor(Math.log10(Math.abs(num))) + 1;
+// }
+
+// function mostDigits(nums) {
+//   let maxDigits = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     maxDigits = Math.max(maxDigits, digitCount(nums[i]));
+//   }
+//   return maxDigits;
+// }
+
+//* Full Radix short
+// function getDigit(num, i) {
+//   return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10;
+// }
+
+// function digitCount(num) {
+//   if (num === 0) return 1;
+//   return Math.floor(Math.log10(Math.abs(num))) + 1;
+// }
+
+// function mostDigits(nums) {
+//   let maxDigits = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     maxDigits = Math.max(maxDigits, digitCount(nums[i]));
+//   }
+//   return maxDigits;
+// }
+
+// function radixSort(nums) {
+//   let maxDigitCount = mostDigits(nums);
+//   for (let k = 0; k < maxDigitCount; k++) {
+//     let digitBuckets = Array.from({ length: 10 }, () => []);
+//     for (let i = 0; i < nums.length; i++) {
+//       let digit = getDigit(nums[i], k);
+//       digitBuckets[digit].push(nums[i]);
+//     }
+//     nums = [].concat(...digitBuckets);
+//   }
+//   return nums;
+// }
+
+// radixSort([23, 345, 5467, 12, 2345, 9852]);
+
+
+
+
+
+
+
+
+
+//! ------------------------------------ DSA -----------------------
+// A means alogorithms ie how you solves the problem like what are the steps
+// DS means Data Structure, ie How we gonna save the data means like which form we are going to save the data which may be conventional like array, object or slef made like linked list, maps etc
