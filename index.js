@@ -569,6 +569,99 @@
 // }
 // console.log(capitalizedWords(['i', 'am', 'learning', 'recursion']));
 
+//* Udemy Quiz
+// Write a function called collectStrings which accepts an object and returns an array of all the values in the object that have a typeof string
+
+// const obj = {
+//     stuff: "foo",
+//     data: {
+//         val: {
+//             thing: {
+//                 info: "bar",
+//                 moreInfo: {
+//                     evenMoreInfo: {
+//                         weMadeIt: "baz"
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+// function collectStrings(data){
+//     let sample = {}
+
+//     function destrc(data){
+//         for(let unit in data){
+//             typeof data[unit] === 'string' ? sample[data[unit]] = data[unit] : destrc(data[unit])
+//         }
+//     }
+//     destrc(data)
+
+//     return Object.values(sample)
+// }
+
+// console.log(collectStrings(obj))
+
+//* Udemy Quiz
+// Write a recursive function called nestedEvenSum. Return the sum of all even numbers in an object which may contain nested objects.
+
+// var obj2 = {
+//   a: 2,
+//   b: {b: 2, bb: {b: 3, bb: {b: 2}}},
+//   c: {c: {c: 2}, cc: 'ball', ccc: 5},
+//   d: 1,
+//   e: {e: {e: 2}, ee: 'car'}
+// };
+
+// function nestedEvenSum(data) {
+//   let sample = 0;
+
+//   function destrc(data) {
+//     for (let unit in data) {
+//       if (typeof data[unit] === "number" && data[unit] % 2 === 0) {
+//         sample = sample + data[unit];
+//       }
+//       if (typeof data[unit] === "object") {
+//         destrc(data[unit]);
+//       }
+//     }
+//   }
+//   destrc(data);
+
+//   return sample;
+// }
+
+// console.log(nestedEvenSum(obj2));
+
+//* Udemy Quiz
+// Write a function called stringifyNumbers which takes in an object and finds all of the values which are numbers and converts them to strings. Recursion would be a great way to solve this!
+// let obj = {
+//   num: 1,
+//   test: [],
+//   data: {
+//       val: 4,
+//       info: {
+//           isRight: true,
+//           random: 66
+//       }
+//   }
+// }
+
+// function stringifyNumbers(obj) {
+//   var newObj = {};
+//   for (var key in obj) {
+//     if (typeof obj[key] === 'number') {
+//       newObj[key] = obj[key].toString();
+//     } else if (typeof obj[key] === 'object' && !Array.isArray(obj[key])) {
+//       newObj[key] = stringifyNumbers(obj[key]);
+//     } else {
+//       newObj[key] = obj[key];
+//     }
+//   }
+//   return newObj;
+// }
+// stringifyNumbers(obj)
+
 // ------------------------------------------ Searching Alogrithms ------------------------------------- //
 //* Linear Search : We visit one item at a time starting at the beginning moving forward or moving at a set interval one item at a time checking every single thing.
 
@@ -953,14 +1046,162 @@
 
 // radixSort([23, 345, 5467, 12, 2345, 9852]);
 
-
-
-
-
-
-
-
-
 //! ------------------------------------ DSA -----------------------
 // A means alogorithms ie how you solves the problem like what are the steps
 // DS means Data Structure, ie How we gonna save the data means like which form we are going to save the data which may be conventional like array, object or slef made like linked list, maps etc
+
+//* Linked List : it's a data structure that stores whatever data you want strings,numbers. A data structure that contains a head, tail and length property. Linked Lists consist of nodes, and each node has a value and a pointer to another node or null
+
+//& To start the linked list, we should have the good knowledge of class
+
+//& Comparisons with Arrays
+
+//^ Linked Lists  (its like stairs in building)
+
+// Do not have indexes!
+// Connected via nodes with a next pointer
+// Random access is not allowed
+
+//^ Arrays (its like lift in building)
+
+// Indexed in order!
+// Insertion and deletion can be expensive
+// Can quickly be accessed at a specific index
+
+// class Node{
+//     constructor(val){
+//         this.val = val;
+//         this.next = null;
+//     }
+// }
+
+// class SinglyLinkedList{
+//     constructor(){
+//         this.head = null;
+//         this.tail = null;
+//         this.length = 0;
+//     }
+//     push(val){
+//         var newNode = new Node(val);
+//         if(!this.head){
+//             this.head = newNode;
+//             this.tail = this.head;
+//         } else {
+//             this.tail.next = newNode;
+//             this.tail = newNode;
+//         }
+//         this.length++;
+//         return this;
+//     }
+//     pop(){
+//         if(!this.head) return undefined;
+//         var current = this.head;
+//         var newTail = current;
+//         while(current.next){
+//             newTail = current;
+//             current = current.next;
+//         }
+//         this.tail = newTail;
+//         this.tail.next = null;
+//         this.length--;
+//         if(this.length === 0){
+//             this.head = null;
+//             this.tail = null;
+//         }
+//         return current;
+//     }
+//     shift(){
+//         if(!this.head) return undefined;
+//         var currentHead = this.head;
+//         this.head = currentHead.next;
+//         this.length--;
+//         if(this.length === 0){
+//             this.tail = null;
+//         }
+//         return currentHead;
+//     }
+//     unshift(val){
+//         var newNode = new Node(val);
+//         if(!this.head) {
+//             this.head = newNode;
+//             this.tail = this.head;
+//         }
+//         newNode.next = this.head;
+//         this.head = newNode;
+//         this.length++;
+//         return this;
+//     }
+//     get(index){
+//         if(index < 0 || index >= this.length) return null;
+//         var counter = 0;
+//         var current = this.head;
+//         while(counter !== index){
+//             current = current.next;
+//             counter++;
+//         }
+//         return current;
+//     }
+//     set(index, val){
+//         var foundNode = this.get(index);
+//         if(foundNode){
+//             foundNode.val = val;
+//             return true;
+//         }
+//         return false;
+//     }
+//     insert(index, val){
+//         if(index < 0 || index > this.length) return false;
+//         if(index === this.length) return !!this.push(val);
+//         if(index === 0) return !!this.unshift(val);
+
+//         var newNode = new Node(val);
+//         var prev = this.get(index - 1);
+//         var temp = prev.next;
+//         prev.next = newNode;
+//         newNode.next = temp;
+//         this.length++;
+//         return true;
+//     }
+//     remove(index){
+//         if(index < 0 || index >= this.length) return undefined;
+//         if(index === 0) return this.shift();
+//         if(index === this.length - 1) return this.pop();
+//         var previousNode = this.get(index - 1);
+//         var removed = previousNode.next;
+//         previousNode.next = removed.next;
+//         this.length--;
+//         return removed;
+//     }
+//     reverse(){
+//       var node = this.head;
+//       this.head = this.tail;
+//       this.tail = node;
+//       var next;
+//       var prev = null;
+//       for(var i = 0; i < this.length; i++){
+//         next = node.next;
+//         node.next = prev;
+//         prev = node;
+//         node = next;
+//       }
+//       return this;
+//     }
+//     print(){
+//         var arr = [];
+//         var current = this.head
+//         while(current){
+//             arr.push(current.val)
+//             current = current.next
+//         }
+//         console.log(arr);
+//     }
+// }
+
+// var list = new SinglyLinkedList()
+
+// list.push(100)
+// list.push(201)
+// list.push(250)
+// list.push(350)
+// list.push(999)
+

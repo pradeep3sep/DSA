@@ -1,3 +1,4 @@
+
 ![Alt text](vlcsnap-2023-02-02-19h54m10s369.png)
 
 ```add(a, b)
@@ -13,3 +14,8 @@ https://visualgo.net/en/sorting
 
 ### Classes on MDN
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+
+### for the Data Structure like linked list, Stack, Queue etc
+https://visualgo.net/en/list?slide=1
+
+**.product-detailmain nav ol.breadcrum*
