@@ -18,4 +18,5 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 ### for the Data Structure like linked list, Stack, Queue etc
 https://visualgo.net/en/list?slide=1
 
-**.product-detailmain nav ol.breadcrum*
+### For Link list, stack,que and more on visualgo
+https://visualgo.net/en/list?slide=1

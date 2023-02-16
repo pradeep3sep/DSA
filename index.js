@@ -665,6 +665,21 @@
 // ------------------------------------------ Searching Alogrithms ------------------------------------- //
 //* Linear Search : We visit one item at a time starting at the beginning moving forward or moving at a set interval one item at a time checking every single thing.
 
+//* udemy Quiz
+// Write a function called linearSearch which accepts an array and a value, and returns the index at which the value exists. If the value does not exist in the array, return -1.
+// Don't use indexOf to implement this function!
+
+// function linearSearch(arr,val){
+//   for(let i=0; i<arr.length; i++){
+//     if(arr[i] === val){
+//       return i
+//     } 
+//   }
+//   return -1
+// }
+// console.log(linearSearch([10, 15, 20, 25, 30], 15))
+
+
 //* Binary Search :
 //Binary search is a much faster form of search
 //Rather than eliminating one element at a time, you can eliminate half of the remaining elements at a time
@@ -704,6 +719,30 @@
 // }
 
 // binarySearch([2,5,6,9,13,15,28,30], 103)
+
+// self for the quiz
+// function binarySearch(arr, val){
+//   let start = 0,
+//   end = arr.length -1,
+//   middle =Math.round((start + end)/2)
+//   while(start < end && arr[middle] !== val){
+//     console.log("yha",arr[start], arr[end],arr[middle],val)
+//     if (val < arr[middle]) {
+//       end = middle -1
+//     } else {
+//       start = middle + 1
+//     }
+//     middle = Math.floor((start + end) / 2);
+//   }
+//   if (val === arr[middle]) {
+//     return middle
+//   } else {
+
+//     return -1
+//   }
+// }
+
+console.log(binarySearch([1,2,3,4,5], 2))
 
 // ----------------------------  Sorting ----------------------------------- //
 // Sorting is the process of rearranging the items in a collection (e.g. an array) so that the items are in some kind of order.
@@ -1205,3 +1244,150 @@
 // list.push(350)
 // list.push(999)
 
+//* Double Linked List : The singly-linked list holds data and a link to the next component. While in a doubly-linked list, every node includes a link to the previous node.
+
+// Doubly Linked Lists are almost identical to Singly Linked Lists except there is an additional pointer to previous nodes
+// Better than Singly Linked Lists for finding nodes and can be done in half the time!
+// However, they do take up more memory considering the extra pointer
+// Doubly linked lists are used to implement other data structures and certain types of caches
+
+// class Node{
+//     constructor(val){
+//         this.val = val;
+//         this.next = null;
+//         this.prev = null;
+//     }
+// }
+
+
+// class DoublyLinkedList {
+//     constructor(){
+//         this.head = null;
+//         this.tail = null;
+//         this.length = 0;
+//     }
+//     push(val){
+//         var newNode = new Node(val);
+//         if(this.length === 0){
+//             this.head = newNode;
+//             this.tail = newNode;
+//         } else {
+//             this.tail.next = newNode;
+//             newNode.prev = this.tail;
+//             this.tail = newNode;
+//         }
+//         this.length++;
+//         return this;
+//     } 
+//     pop(){
+//         if(!this.head) return undefined;
+//         var poppedNode = this.tail;
+//         if(this.length === 1){
+//             this.head = null;
+//             this.tail = null;
+//         } else {
+//             this.tail = poppedNode.prev;
+//             this.tail.next = null;
+//             poppedNode.prev = null;
+//         }
+//         this.length--;
+//         return poppedNode;
+//     }
+//     shift(){
+//         if(this.length === 0) return undefined;
+//         var oldHead = this.head;
+//         if(this.length === 1){
+//             this.head = null;
+//             this.tail = null;
+//         }else{
+//             this.head = oldHead.next;
+//             this.head.prev = null;
+//             oldHead.next = null;
+//         }
+//         this.length--;
+//         return oldHead;
+//     }
+//     unshift(val){
+//         var newNode = new Node(val);
+//         if(this.length === 0) {
+//             this.head = newNode;
+//             this.tail = newNode;
+//         } else {
+//             this.head.prev = newNode;
+//             newNode.next = this.head;
+//             this.head = newNode;
+//         }
+//         this.length++;
+//         return this;
+//     }
+//     get(index){
+//         if(index < 0 || index >= this.length) return null;
+//         var count, current;
+//         if(index <= this.length/2){
+//             count = 0;
+//             current = this.head;
+//             while(count !== index){
+//                 current = current.next;
+//                 count++;
+//             }
+//         } else {
+//             count = this.length - 1;
+//             current = this.tail;
+//             while(count !== index){
+//                 current = current.prev;
+//                 count--;
+//             }
+//         }
+//         return current;
+//     }
+//     set(index, val){
+//         var foundNode = this.get(index);
+//         if(foundNode != null){
+//             foundNode.val = val;
+//             return true;
+//         }
+//         return false;
+//     }
+//     insert(index, val){
+//         if(index < 0 || index > this.length) return false;
+//         if(index === 0) return !!this.unshift(val);
+//         if(index === this.length) return !!this.push(val);
+
+//         var newNode = new Node(val);
+//         var beforeNode = this.get(index-1);
+//         var afterNode = beforeNode.next;
+        
+//         beforeNode.next = newNode, newNode.prev = beforeNode;
+//         newNode.next = afterNode, afterNode.prev = newNode;
+//         this.length++;
+//         return true;
+//     }
+// }
+
+// var list = new DoublyLinkedList()
+// list.push("Harry")
+// list.push("Ron")
+// list.push("Hermione")
+
+
+//------------------------------------------Stack-------------------------------------//
+// Stack is a A LIFO data structure. The last element added to the stack will be the first element removed from the stack
+//WHERE STACKS ARE USED ARE
+// Managing function invocations
+// Undo / Redo
+// Routing (the history object) is treated like a stack!
+
+
+// THERE IS MORE THAN ONE WAY OF IMPLEMENTING A STACK
+
+//* 1- ARRAY IMPLEMENTATION
+// In the array, we have the built-in stack mechanism ie push,pop or shift,unshift. The functioning is like we are adding the data through push and shift and then for removing the last added data we use the pop and unshift. This is how tha stack mechanism woerk in array. Push and pop are the preferred approach because of O(n)
+
+//* 2- LINKED LIST IMPLEMENTATION
+// Concept is same for the single linked list and double linked list, but in single linked list the push and pop method are the O(N) which is not great becuase we need the O(1). So we use the Double linked list for the push {O(1)},pop {O(1)} or shift {O(1)},unshift {O(1)}. In single linked list we use the shift{O(1)},unshift {O(1)}
+
+
+
+//------------------------------------------Queues-------------------------------------//
+
+//* QUEUES is A FIFO data structure. First In First Out
