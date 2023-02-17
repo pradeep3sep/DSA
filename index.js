@@ -742,7 +742,7 @@
 //   }
 // }
 
-console.log(binarySearch([1,2,3,4,5], 2))
+// console.log(binarySearch([1,2,3,4,5], 2))
 
 // ----------------------------  Sorting ----------------------------------- //
 // Sorting is the process of rearranging the items in a collection (e.g. an array) so that the items are in some kind of order.
@@ -1386,8 +1386,94 @@ console.log(binarySearch([1,2,3,4,5], 2))
 //* 2- LINKED LIST IMPLEMENTATION
 // Concept is same for the single linked list and double linked list, but in single linked list the push and pop method are the O(N) which is not great becuase we need the O(1). So we use the Double linked list for the push {O(1)},pop {O(1)} or shift {O(1)},unshift {O(1)}. In single linked list we use the shift{O(1)},unshift {O(1)}
 
+// class Node {
+//     constructor(value){
+//         this.value = value;
+//         this.next = null;
+//     }
+// }
+
+// class Stack {
+//     constructor(){
+//         this.first = null;
+//         this.last = null;
+//         this.size = 0;
+//     }
+//     push(val){
+//         var newNode = new Node(val);
+//         if(!this.first){
+//             this.first = newNode;
+//             this.last = newNode;
+//         } else {
+//             var temp = this.first;
+//             this.first = newNode;
+//             this.first.next = temp;
+//         }
+//         return ++this.size;
+//     }
+//     pop(){
+//         if(!this.first) return null;
+//         var temp = this.first;
+//         if(this.first === this.last){
+//             this.last = null;
+//         }
+//         this.first = this.first.next;
+//         this.size--;
+//         return temp.value;
+//     }
+// }
 
 
 //------------------------------------------Queues-------------------------------------//
 
 //* QUEUES is A FIFO data structure. First In First Out
+
+
+//* 1- ARRAY IMPLEMENTATION
+// for the array implementation, we can use the combination of push,shift or pop,unshift... The problem is that it is O(n).
+
+//* 2- Single LINKED LIST IMPLEMENTATION
+// adding at the beginning and removing from the end is slow O(n) because of we have traverse all node
+// We use the approach of removing from the head and adding at end
+
+// class Node {
+//     constructor(value){
+//         this.value = value;
+//         this.next = null;
+//     }
+// }
+
+// class Queue {
+//     constructor(){
+//         this.first = null;
+//         this.last = null;
+//         this.size = 0;
+//     }
+//     enqueue(val){
+//         var newNode = new Node(val);
+//         if(!this.first){
+//             this.first = newNode;
+//             this.last = newNode;
+//         } else {
+//             this.last.next = newNode;
+//             this.last = newNode;
+//         }
+//         return ++this.size;
+//     }
+
+//     dequeue(){
+//         if(!this.first) return null;
+
+//         var temp = this.first;
+//         if(this.first === this.last) {
+//             this.last = null;
+//         }
+//         this.first = this.first.next;
+//         this.size--;
+//         return temp.value;
+//     }
+// }
+
+
+//-------------------------------- TREES--------------------------------//
+
