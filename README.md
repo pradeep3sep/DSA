@@ -81,3 +81,4 @@ A binary tree is a type of data structure, where each node has at most two child
 ![validcheck](validcheck.jpg)
 ![validcheck2](validcheck2.jpg)
 ![validcheck3](validcheck3.jpg)
+/
