@@ -21,14 +21,14 @@ https://visualgo.net/en/bst?slide=1
 
 # Trees
 ###### Tree - A data structure that consists of nodes in a parent / child relationship. There is only one root parent node and then its child below of it
-![Tree main image](trees.jpg)
+![Tree main image](images/trees.jpg)
 
 #### List are linear (straight line) while trees are nonlinear
-![Tree-linkedList](tree-LL.jpg)
+![Tree-linkedList](images/tree-LL.jpg)
 
 #### Below are the certain which looks like tree but are not
-![Tree-notTree1](notTree1.jpg)
-![Tree-notTree2](notTree2.jpg)
+![Tree-notTree1](images/notTree1.jpg)
+![Tree-notTree2](images/notTree2.jpg)
 
 
 #### TREE TERMINOLOGY
@@ -56,8 +56,8 @@ https://visualgo.net/en/bst?slide=1
 ### Binary Tree
 A binary tree is a type of data structure, ***where each node has at most two child nodes***, referred to as left child and right child.
 
-![binarytree](binarytree.jpg)
-![notbinarytree](nbt.jpg)
+![binarytree](images/binarytree.jpg)
+![notbinarytree](images/nbt.jpg)
 
 ### Lots of different applications as well!
 
@@ -71,10 +71,10 @@ A binary tree is a type of data structure, ***where each node has at most two ch
 * ***Every node to the left of a parent node is always less than the parent***
 * ***Every node to the right of a parent node is always greater than the parent***
 
-![validcheck](validcheck.jpg)
-![validcheck2](validcheck2.jpg)
-![validcheck3](validcheck3.jpg)
-![BigO of BST](Big0(BST).png)
+![validcheck](images/validcheck.jpg)
+![validcheck2](images/validcheck2.jpg)
+![validcheck3](images/validcheck3.jpg)
+![BigO of BST](images/Big0(BST).png)
 
 
 ### TREE TRAVERSAL - Visiting every node once
@@ -83,15 +83,15 @@ There are two Methods
 * Breadth-first Search
 * Depth-first Search
 
-![Breadth-first Search](BFS.jpg)
+![Breadth-first Search](images/BFS.jpg)
 
 ### Types of DFS
-![DFS-preorder](DFS-preorder-points.jpg)
-![DFS-preorder](DFS-preorder.gif)
-![DFS-postorder](dfs-posterorder-point.jpg)
-![DFS-postorder](DFS-postorder.gif)
-![DFS-inorder](DFS-inorder-steps.jpg)
-![DFS-inorder](DFS-inorder.gif)
+![DFS-preorder](images/DFS-preorder-points.jpg)
+![DFS-preorder](images/DFS-preorder.gif)
+![DFS-postorder](images/dfs-posterorder-point.jpg)
+![DFS-postorder](images/DFS-postorder.gif)
+![DFS-inorder](images/DFS-inorder-steps.jpg)
+![DFS-inorder](images/DFS-inorder.gif)
 
 
 
@@ -226,9 +226,9 @@ tree.DFSInOrder();
 #### BFS Vs DFS
 * Time complexity of both are same because we are visiting every node once. We can find out on the basis of the space complexity
 * Below one depth is winner beacuse we store the data for breath then it will occupy more space
-![depthfirstwinner](depthfirstwinner.png)
+![depthfirstwinner](images/depthfirstwinner.png)
 * below is breath winner becase breath store unit value at certain time
-![breathfirstwinner](nreathfirstwinner.png)
+![breathfirstwinner](images/nreathfirstwinner.png)
 
 * DFS-Inorder gives data in increasing order
 * DFS-Preorder gives which we can store and again can make the tree
