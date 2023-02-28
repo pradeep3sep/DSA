@@ -1,4 +1,5 @@
 # Important Links
+!(Big O charts)[images/complexity_chart.png]
 ### For bigO of all type of data
 https://www.bigocheatsheet.com/
 
