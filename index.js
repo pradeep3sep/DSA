@@ -343,7 +343,7 @@
 //   return false;
 // }
 
-// ------------------------------------------------------------------------------------------------------------ //
+//! ------------------------------------------------------------------------------------------------------------ //
 // Recursion ==  A process (a function in our case) that calls itself
 // base code in recursion : A situation when the recursion ends. basically jha hum recursion stop kar de ie return of function
 // Used location are:
@@ -662,8 +662,8 @@
 // }
 // stringifyNumbers(obj)
 
-// ------------------------------------------ Searching Alogrithms ------------------------------------- //
-//* Linear Search : We visit one item at a time starting at the beginning moving forward or moving at a set interval one item at a time checking every single thing.
+//! ------------------------------------------ Searching Alogrithms ------------------------------------- //
+//* Linear Search O(n): We visit one item at a time starting at the beginning moving forward or moving at a set interval one item at a time checking every single thing.
 
 //* udemy Quiz
 // Write a function called linearSearch which accepts an array and a value, and returns the index at which the value exists. If the value does not exist in the array, return -1.
@@ -680,7 +680,7 @@
 // console.log(linearSearch([10, 15, 20, 25, 30], 15))
 
 
-//* Binary Search :
+//* Binary Search O(log n):
 //Binary search is a much faster form of search
 //Rather than eliminating one element at a time, you can eliminate half of the remaining elements at a time
 //Binary search only works on //!sorted arrays!
@@ -744,7 +744,7 @@
 
 // console.log(binarySearch([1,2,3,4,5], 2))
 
-// ----------------------------  Sorting ----------------------------------- //
+//! ----------------------------  Sorting ----------------------------------- //
 // Sorting is the process of rearranging the items in a collection (e.g. an array) so that the items are in some kind of order.
 // Examples
 // Sorting numbers from smallest to largest
@@ -767,6 +767,11 @@
 //   [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
 // };
 
+// or simply
+// let a = 3;
+// let b = 4;
+// [b,a] = [a,b]
+// console.log({a, b})
 //& UNOPTIMIZED VERSION OF BUBBLE SORT
 // function bubbleSort(arr){
 //     for(var i = arr.length; i > 0; i--){
@@ -880,7 +885,7 @@
 
 // insertionSort([2,1,9,76,4])
 
-// --------------------------------------------- Merge Sort --------------------------//
+//! --------------------------------------------- Merge Sort --------------------------//
 //Below is the code to merge two sorted arrays
 //* Merges two already sorted arrays
 // function merge(arr1, arr2) {
@@ -949,7 +954,7 @@
 
 // mergeSort([10, 24, 76, 73]);
 
-// --------------------------------------------- Quick Sort --------------------------//
+//! --------------------------------------------- Quick Sort --------------------------//
 
 //& Below is code to find the pivot point which helps further sort
 //* First Version
@@ -1032,7 +1037,7 @@
 
 // quickSort([100, -3, 2, 4, 6, 9, 1, 2, 5, 3, 23]);
 
-// --------------------------------------------- Radix Sort --------------------------//
+//! --------------------------------------------- Radix Sort --------------------------//
 
 //* Radix sort helpers
 // function getDigit(num, i) {
@@ -1051,6 +1056,9 @@
 //   }
 //   return maxDigits;
 // }
+
+// It return the max count length in array of numbers eg [1234,53,7] gives 4
+
 
 //* Full Radix short
 // function getDigit(num, i) {
@@ -1370,7 +1378,7 @@
 // list.push("Hermione")
 
 
-//------------------------------------------Stack-------------------------------------//
+//!------------------------------------------Stack-------------------------------------//
 // Stack is a A LIFO data structure. The last element added to the stack will be the first element removed from the stack
 //WHERE STACKS ARE USED ARE
 // Managing function invocations
@@ -1424,7 +1432,7 @@
 // }
 
 
-//------------------------------------------Queues-------------------------------------//
+//!------------------------------------------Queues-------------------------------------//
 
 //* QUEUES is A FIFO data structure. First In First Out
 
@@ -1475,5 +1483,5 @@
 // }
 
 
-//-------------------------------- TREES--------------------------------//
+//!-------------------------------- TREES--------------------------------//
 
